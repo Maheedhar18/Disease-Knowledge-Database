@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/contact.css" />
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">DKDB</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h1>Contact Us</h1>
+      <div>
+        We would love to hear feedback from you regarding the website, bugs,
+        suggestions. You can contact us just by emailing to abc@gmail.com <br />
+        Or you can also fill out the feedback form below.
+      </div>
+      <form method="POST" action="/contact">
+        <ul>
+          <li>
+            <div><label>Name :</label></div>
+            
+            <input type="text" name="name" />
+          </li>
+          <li>
+            <div><label>Email ID :</label></div>
+            
+            <input type="email" name="mail" />
+          </li>
+
+          <li>
+            <div><label>Feedback :</label></div>
+            <textarea name="feed_back" id="feedback" cols="100" rows="20"></textarea>
+          </li>
+          <button>Submit</button>
+        </ul>
+      </form>
+    </section>
+  </body>
+</html>
