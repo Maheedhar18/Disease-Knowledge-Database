@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const feedbackRouter = require('./routes/feedbackRoutes');
+const Diseases = require('./models/diseasesModel');
 const app = express();
 
 
@@ -16,5 +17,10 @@ app.get('/', function(req, res) {
 
 
 app.use('/contact', feedbackRouter);
+
+app.get('/diseases', async function(req, res) {
+    const diseases = await Diseases.find({});
+    res.render('diseases', {diseases : diseases});
+});
 
 module.exports = app;

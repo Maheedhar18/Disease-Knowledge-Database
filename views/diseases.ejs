@@ -7,6 +7,12 @@
     <title>Diseases</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <ul>
+        <% for (const disease of diseases) { %>
+            <li>
+                <%= disease.disease_name %>
+            </li>
+        <% } %>
+    </ul>
 </body>
 </html>
