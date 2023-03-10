@@ -23,4 +23,10 @@ app.get('/diseases', async function(req, res) {
     res.render('diseases', {diseases : diseases});
 });
 
+app.get('/diseases/:id', async function(req, res) {
+    const diseaseId = req.params.id;
+    const disease = await Diseases.findOne({_id : diseaseId});
+    res.render('disease', {disease : disease});
+})
+
 module.exports = app;

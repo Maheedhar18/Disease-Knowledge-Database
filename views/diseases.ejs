@@ -11,6 +11,7 @@
         <% for (const disease of diseases) { %>
             <li>
                 <%= disease.disease_name %>
+                <a href="/diseases/<%= disease._id %>">View</a>
             </li>
         <% } %>
     </ul>
