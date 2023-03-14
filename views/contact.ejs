@@ -1,47 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <link rel="stylesheet" href="../styles/contact.css" />
-    <title>Contact Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">DKDB</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-      </ul>
-    </nav>
-    <section>
-      <h1>Contact Us</h1>
-      <div>
-        We would love to hear feedback from you regarding the website, bugs,
-        suggestions. You can contact us just by emailing to abc@gmail.com <br />
-        Or you can also fill out the feedback form below.
-      </div>
-      <form method="POST" action="/contact">
-        <ul>
-          <li>
-            <div><label>Name :</label></div>
-            
-            <input type="text" name="name" />
-          </li>
-          <li>
-            <div><label>Email ID :</label></div>
-            
-            <input type="email" name="mail" />
-          </li>
+    <!-- Navbar -->
+    <%- include('includes/navbar')  %>
 
-          <li>
-            <div><label>Feedback :</label></div>
-            <textarea name="feed_back" id="feedback" cols="100" rows="20"></textarea>
-          </li>
-          <button>Submit</button>
-        </ul>
-      </form>
-    </section>
+    <!-- Feedback form -->
+    <div class="container-fluid">
+      <div class="row justify-content-evenly mb-5">
+        <div class="col-10">
+          <p class="h2 text-center">Contact Us</p>
+          <p class="text-center">We would love to see feedback from you regarding the website, bugs, suggestions.<br> You can contact us just by emailing to <mark>abc@gmail.com</mark> or you can also fill out the feedback form below.</p>
+        </div>
+      </div>
+      <div class="row justify-content-evenly">
+        <div class="col-5">
+          <form>
+            <div class="mb-3">
+              <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input type="name" class="form-control" id="Name">
+              </div>
+              <label for="Email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="Feedback" class="form-label">Feedback</label>
+              <textarea class="form-control" id="Feedback" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-5">
+          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7776.082165819379!2d79.155934!3d12.969223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad479f0ccbe067%3A0xfef222e5f36ecdeb!2sVellore%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1678800890093!5m2!1sen!2sin" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer-->
+    <%- include('includes/footer.ejs')  %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
