@@ -4,44 +4,142 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <title>Home</title>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="/">DKDB</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-        </ul>
-    </nav>
-    <section id="intro">
-        <h1>Welcome to DKDB</h1>
-        <div>DKDB is a Disease Knowledge Database. 
-            Knowledge Base creation in the medical domain has always been a challenging
-            task and the present Electronic Health Records held by the healthcare
-            professionals cannot handle data on a scale and various limitations occur
-            when newer technologies like Machine Learning are used on the data for
-            research due to imprecision of the data and the anomalies present. Gathering
-            information and maintaining it on a scale is also a task that cannot be done
-            using manual work and requires technologies like AI and Natural Language
-            Processing. Some EHRs contain only basic information about diseases while
-            some contain advanced information regarding phenotypes and gene encoding.
-            We try to include both general information and data about drug and clinical
-            trials along with gene encodings of diseases using Natural Language
-            Processing.</div>
-    </section>
-    <section id="resources">
-        <h3>Resources</h3>
-        <ul>
-            <li><a href="https://rarediseases.info.nih.gov/diseases">Genetic and Rare Diseases Information</a></li>
-            <li><a href="https://hpo.jax.org/app/">Human Phenotype Ontology</a></li>
-            <li><a href="https://go.drugbank.com/">Drug Bank</a></li>
-            <li><a href="https://en.wikipedia.org/wiki">Wikipedia</a></li>
-            <li><a href="https://www.genecards.org">Gene Cards</a></li>
-        </ul>
-    </section>
-    <footer>
+<body style="background-color: rgb(227, 225, 225);">
+    <!-- Navbar -->
+    <%- include('includes/navbar')  %>
 
-    </footer>
+    <!-- About Website and Slideshow-->
+    <h2 class="text-center mb-5">Welcome to DKDB</h2>
+    <div class="container-fluid">
+        <div class="row justify-content-evenly">
+            <div class="col-5 ">
+                <h4 class="text-center">About Website</h4>
+                <ul>
+                    <li>DKDB is Disease Knowledge Database. 
+                        Knowledge Base creation in the medical domain has always been a challenging
+                        task and the present Electronic Health Records held by the healthcare
+                        professionals cannot handle data on a scale and various limitations occur
+                        when newer technologies like Machine Learning are used on the data for
+                        research due to imprecision of the data and the anomalies present.</li>
+                    <li>Gathering
+                        information and maintaining it on a scale is also a task that cannot be done
+                        using manual work and requires technologies like AI and Natural Language
+                        Processing.</li>
+                    <li>Some EHRs contain only basic information about diseases while
+                        some contain advanced information regarding phenotypes and gene encoding.
+                        We try to include both general information and data about drug and clinical
+                        trials along with gene encodings of diseases using Natural Language
+                        Processing.</li>
+                </ul>
+            </div>
+            <div class="col-5">
+                <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade shadow p-3 mb-5 bg-white rounded" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox" style=" width:100%; height: 300px !important;">
+                      <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="../photos/c1.jpg" class="d-block w-100" alt="Disease">
+                      </div>
+                      <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../photos/c2.jpg" class="d-block w-100" alt="Tablets">
+                      </div>
+                      <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../photos/c3.jpg" class=" d-block w-100" alt="Doctors">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+        </div>
+
+        <hr>
+        
+        <!-- Resources -->
+        <div class="row justify-content-evenly text-center m-5">
+            <h3>Resources</h3>
+            <div class="col-10 mt-3">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Genetic and Rare Diseases Information
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            The Genetic and Rare Diseases (GARD) Information Center is a public health resource aiming to support people living with a rare disease and their caregivers by providing access to easy-to-understand information that is free and reliable. Click <a href="https://rarediseases.info.nih.gov/diseases" class="text-decoration-none">here</a> to go to the website.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Human Phenotype Ontology
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            The Human Phenotype Ontology (HPO) provides a standardized vocabulary of phenotypic abnormalities encountered in human disease. The HPO is currently being developed using the medical literature, Orphanet, DECIPHER, and OMIM. HPO currently contains over 13,000 terms and over 156,000 annotations to hereditary diseases. Click <a href="https://hpo.jax.org/app/" class="text-decoration-none">here</a> to go to the website.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Drug Bank
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            DrugBank Online is a comprehensive, free-to-access, online database containing information on drugs and drug targets. DrugBank Online is widely used by the drug industry, medicinal chemists, pharmacists, physicians, students and the general public. Because of its broad scope, comprehensive referencing, and detailed data descriptions, DrugBank is enabling major advancements across the data-driven medicine industry. Click <a href="https://go.drugbank.com/" class="text-decoration-none">here</a> to go to the website.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Wikipedia
+                          </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            Wikipedia is a dynamic free online encyclopedia. Wikipedia's purpose is to benefit readers by containing information on all branches of knowledge. Hosted by the Wikimedia Foundation, Wikipedia consists of freely editable content, whose articles also have numerous links to guide readers to more information. It also contains extensive information regarding the diseases. Click <a href="https://en.wikipedia.org/wiki" class="text-decoration-none">here</a> to go to the website.
+                        </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Gene Cards
+                          </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            GeneCards is a searchable, integrative database that provides comprehensive, user-friendly information on all annotated and predicted human genes. The knowledgebase automatically integrates gene-centric data from ~150 web sources, including genomic, transcriptomic, proteomic, genetic, clinical and functional information. Click <a href="https://www.genecards.org/" class="text-decoration-none">here</a> to go to the website.
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+
+    
+    
+    </div>
+
+
+    <!-- Footer -->
+    <%- include('includes/footer')  %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

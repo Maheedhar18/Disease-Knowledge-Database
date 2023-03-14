@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   </head>
-  <body>
+  <body style="background-color: rgb(227, 225, 225);">
     <!-- Navbar -->
     <%- include('includes/navbar')  %>
 
@@ -21,26 +21,26 @@
       </div>
       <div class="row justify-content-evenly">
         <div class="col-5">
-          <form>
+          <form class="shadow p-3 mb-5 bg-white rounded" method="POST" action="/contact" onsubmit="myFunction()">
             <div class="mb-3">
               <div class="mb-3">
                 <label for="Name" class="form-label">Name</label>
-                <input type="name" class="form-control" id="Name">
+                <input type="name" class="form-control" id="Name" name="name">
               </div>
-              <label for="Email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+              <label for="Email" class="form-label" >Email address</label>
+              <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="mail">
             </div>
             <div class="mb-3">
               <label for="Feedback" class="form-label">Feedback</label>
-              <textarea class="form-control" id="Feedback" rows="3"></textarea>
+              <textarea class="form-control" id="Feedback" rows="3" name="feed_back"></textarea>
             </div>
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
         <div class="col-5">
           <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7776.082165819379!2d79.155934!3d12.969223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad479f0ccbe067%3A0xfef222e5f36ecdeb!2sVellore%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1678800890093!5m2!1sen!2sin" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="shadow p-3 mb-5 bg-white rounded" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7776.082165819379!2d79.155934!3d12.969223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad479f0ccbe067%3A0xfef222e5f36ecdeb!2sVellore%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1678800890093!5m2!1sen!2sin" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
@@ -49,7 +49,11 @@
 
     <!-- Footer-->
     <%- include('includes/footer.ejs')  %>
-
+    <script>
+      function myFunction() {
+        alert("Your feedback has submitted");
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
