@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const feedbackRouter = require('./routes/feedbackRoutes');
 const Diseases = require('./models/diseasesModel');
+const Drugs = require('./models/DrugInformationsModel');
 const app = express();
 
 
@@ -28,5 +29,10 @@ app.get('/diseases/:id', async function(req, res) {
     const disease = await Diseases.findOne({_id : diseaseId});
     res.render('disease', {disease : disease});
 })
+
+app.get('/drugs', async function(req, res) {
+    const drugs = await Drugs.find({});
+    res.render('drugs', {drugs : drugs});
+});
 
 module.exports = app;
