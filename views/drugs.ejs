@@ -20,6 +20,7 @@
             <th scope="col">Weight</th>
             <th scope="col">Description</th>
             <th scope="col">Categories</th>
+            <th scope="col">Clinical Trial</th>
           </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@
                 <td><%= drug.Weight %></td>
                 <td><%= drug.Description %></td>
                 <td><%= drug.Categories %></td>
+                <td><a href="/clinicaltrials/<%= drug._id %>">View</a></td>
             </tr>
             <% i+=1; 
             } %>

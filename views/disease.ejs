@@ -3,11 +3,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= disease.disease_name %></title>
+    <title><%= disease.Disease %></title>
 </head>
 <body>
-    <div>The Scientific name of <%= disease.disease_name %> is given as <%= disease.scientific_name %></div>
-    <div><%=  disease.summary %></div>
-    <div>Some related diseases are <%= disease.related_diseases %></div>
+    <div><%= disease.Disease %> Freuency is <%= disease.Frequency %></div>
+    <% if(disease.Treatment) { %>
+    <div>This can be treated by <%= disease.Treatment %> </div>
+    <% } %>
+    <% if(disease.Medication) { %>
+        <div>Medication needed is <%= disease.Medication %> </div>
+    <% } %>
+    <div><%= symptom.Symptoms %></div>
+    <div>The Affected Organs include <%= symptom.AffectedOrgan%></div>
 </body>
 </html>
