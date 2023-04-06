@@ -34,7 +34,7 @@ app.get('/diseases/:id', async function(req, res) {
     const name = diseases.disease_name;
     const disease = await generalinformations.findOne({Disease : name});
     const symptom = await Symptom.findOne({Disease : name});
-    res.render('disease', {disease : disease , symptom : symptom});
+    res.render('disease', {diseases: diseases, disease : disease , symptom : symptom});
 });
 
 app.get('/drugs', async function(req, res) {
@@ -65,7 +65,15 @@ app.get('/clinicaltrials/:id', async function(req, res){
     const drug = await Drugs.findOne({_id : drugId});
     const name = drug.Name;
     const trials = await clinicaltrials.find({Drug : name});
-    res.render('ctrialsingle', {trials : trials});
+    if (trials[0])
+    {
+        res.render('ctrialsingle', {trials : trials});
+    }
+    else
+    {
+        res.render('noclinicaltrials', {drug : drug});
+    }
+    
 });
 
 module.exports = app;

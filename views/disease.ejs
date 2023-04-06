@@ -4,16 +4,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= disease.Disease %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
-<body>
-    <div><%= disease.Disease %> Freuency is <%= disease.Frequency %></div>
-    <% if(disease.Treatment) { %>
-    <div>This can be treated by <%= disease.Treatment %> </div>
-    <% } %>
-    <% if(disease.Medication) { %>
-        <div>Medication needed is <%= disease.Medication %> </div>
-    <% } %>
-    <div><%= symptom.Symptoms %></div>
-    <div>The Affected Organs include <%= symptom.AffectedOrgan%></div>
+<body style="background-color: rgb(227, 225, 225);">
+    <%- include('./includes/navbar')  %>
+    <div class="container-fluid">
+        <div class=" row justify-content-evenly">
+            <div class="col-10">
+                <h1 class="text-center"><%= disease.Disease %></h1>
+                <p class="m-8">
+                    <h4>Description</h4>
+                    <div><%= diseases.summary %> </div>
+                </p>
+                <p class="m-8">
+                    <h4>Scientific Name</h4>
+                    <div><%= diseases.scientific_name %> </div>
+                </p>
+                <p class="m-8">
+                    <h4>Related Diseases</h4>
+                    <div><%= diseases.related_diseases %> </div>
+                </p>
+                <p class="m-8">
+                    <h4>Symptoms</h4>
+                    <div><%= symptom.Symptoms %></div>
+                </p>
+                <p class="m-8">
+                    <h4>Affected Organs</h4>
+                    <div>The Affected Organs include <%= symptom.AffectedOrgan%>.</div>
+                </p>
+                <% if(disease.Speciality) { %>
+                    <p class="m-8">
+                        <h4>Speciality</h4>
+                        <div><%= disease.Speciality %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Causes) { %>
+                    <p class="m-8">
+                        <h4>Causes</h4>
+                        <div><%= disease.Causes %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Complications) { %>
+                    <p class="m-8">
+                        <h4>Complications</h4>
+                        <div><%= disease.Complications %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Types) { %>
+                    <p class="m-8">
+                        <h4>Types</h4>
+                        <div><%= disease.Types %> </div>
+                    </p>
+                <% } %>    
+                <% if(disease.Prognosis) { %>
+                    <p class="m-8">
+                        <h4>Prognosis</h4>
+                        <div><%= disease.Prognosis %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Duration) { %>
+                    <p class="m-8">
+                        <h4>Duration</h4>
+                        <div><%= disease.Duration %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Prevention) { %>
+                    <p class="m-8">
+                        <h4>Prevention</h4>
+                        <div><%= disease.Prevention %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Treatment) { %>
+                    <p class="m-8">
+                        <h4>Treatment</h4>
+                        <div><%= disease.Treatment %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Medication) { %>
+                    <p class="m-8">
+                        <h4>Medication</h4>
+                        <div><%= disease.Medication %> </div>
+                    </p>
+                <% } %>
+                <% if(disease.Frequency) { %>
+                    <p class="m-8">
+                        <h4>Frequency</h4>
+                        <div>Nearly <%= disease.Frequency %> get affected by this disease. </div>
+                    </p>
+                <% } %>
+                <% if(disease.Deaths) { %>
+                    <p class="m-8">
+                        <h4>Deaths</h4>
+                        <div>There were over <%= disease.Deaths %> deaths.</div>
+                    </p>
+                <% } %>
+                
+            </div>
+        </div>
+
+    </div>
 </body>
+<%- include('./includes/footer')  %>
 </html>

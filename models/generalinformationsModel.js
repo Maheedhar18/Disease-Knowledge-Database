@@ -4,6 +4,21 @@ const generalinformationsSchema = new mongoose.Schema({
     Disease: {
         type: String
     },
+    Speciality: {
+        type: String
+    },
+    Causes: {
+        type: String
+    },
+    Complications: {
+        type: String
+    },
+    Types: {
+        type: String
+    },
+    Prognosis: {
+        type: String
+    },
     Duration: {
         type: String
     },

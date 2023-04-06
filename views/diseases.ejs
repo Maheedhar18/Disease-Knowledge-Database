@@ -29,11 +29,11 @@
             for (const disease of diseases) { %>
             <tr>
                 <th scope="row"><%= i %></th>
-                <td><a href="/diseases/<%= disease._id %>"><%= disease.disease_name %></a></td>
+                <td><a class="text-decoration-none" href="/diseases/<%= disease._id %>"><%= disease.disease_name %></a></td>
                 <td><%= disease.scientific_name %></td>
                 <td><%= disease.summary %></td>
                 <td><%= disease.related_diseases %></td>
-                <td><a href="/genes/<%= disease._id %>">View</a></td>
+                <td><a class="text-decoration-none" href="/genes/<%= disease._id %>">View</a></td>
             </tr>
             <% i+=1; 
             } %>
