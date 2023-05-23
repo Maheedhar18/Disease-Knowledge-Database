@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const app = require('./app');
 
-const dburl='mongodb+srv://Maheedhar:mahee123@cluster0.bndg37a.mongodb.net/capstone?retryWrites=true&w=majority'
+const dburl='mongodb+srv://<username>:<password>@cluster0.bndg37a.mongodb.net/<database>?retryWrites=true&w=majority'
 
 async function connect(){
     try {
